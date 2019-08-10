@@ -1,0 +1,52 @@
+/* components/classic/music/index.wxss *//* components/moves/index.wxss */
+.move-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60rpx;
+}
+.imgs{
+    width: 750rpx;
+    height: 500rpx;
+}
+.img-icon{
+    width: 46rpx;
+    height: 142rpx;
+    right: 320rpx;
+    bottom: 58rpx;
+    position: relative;
+}
+.text{
+    max-width: 500rpx;
+    font-size: 36rpx;
+}
+.imgs{
+    width: 422rpx;
+    height: 422rpx;
+    border-radius: 50%;
+}
+.palys{
+    width: 120rpx;
+    height: 120rpx;
+    position:relative;
+    bottom:-270rpx;
+    z-index: 999;
+}
+
+.rotation {
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

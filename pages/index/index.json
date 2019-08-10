@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "like-cmp":"../../components/like/index",
+    "move":"../../components/classic/moves/index",
+    "music":"../../components/classic/music/index",
+    "essay":"../../components/classic/essay/index",
+    "epsoide":"../../components/epsoide/index",
+    "centent":"../../components/centent/index",
+    "img-btn-cmp": "/components/image-buttom/index"
+  }
+}

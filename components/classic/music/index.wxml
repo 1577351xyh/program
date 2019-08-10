@@ -1,0 +1,7 @@
+<!--components/classic/music/index.wxml-->
+<view class="move-content">
+    <image class="palys" src="{{playing?stop:paly}}" bind:tap="onplay"></image>
+    <image class="imgs {{playing?'rotation':''}}" src="{{img}}"></image>
+    <image class="img-icon" src="{{imgicon}}"></image>
+    <text class="text">{{centent}}</text>
+</view>

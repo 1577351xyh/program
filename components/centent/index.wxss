@@ -1,0 +1,18 @@
+/* components/centent/index.wxss */
+.centent{
+    box-sizing: border-box;
+    width: 600rpx;
+    height: 80rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    border-radius: 2px;
+}
+.imgs{
+    width: 80rpx;
+    height: 80rpx;
+}
+.text{
+    font-size: 28rpx;
+}

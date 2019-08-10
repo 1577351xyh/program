@@ -1,0 +1,79 @@
+<!--pages/bookinfo/bookinfo.wxml-->
+<wxs src="../../util/filter.wxs" module="util" />
+<view class="container">
+    <view class="head">
+        <image src="{{info.image}}" class="img"></image>
+        <text class="title">{{info.title}}</text>
+        <text class="author">{{info.author[0]}}</text>
+    </view>
+    <view class="sub-container">
+        <text class="headline">短评</text>
+        <text class="shadow" wx:if="{{short==false}}" wx:key="*this">还没有短评</text>
+        <view class="text">
+            <block wx:for="{{short}}">
+                <tag tag-class="{{index==0?'ex-tag1':'' || index==1?'ex-tag2':''}}" text="{{item.content}}" class="tag">
+                    <text class="num" slot="after">{{'+'+item.nums}}</text>
+                </tag>
+            </block>
+        </view>
+    </view>
+    <view class="sub-container">
+        <text class="headline">内容简介</text>
+        <view class="text">
+            <text class="summary contents" decode="{{true}}">{{util.format(info.summary)}}</text>
+        </view>
+    </view>
+    <view class="sub-container">
+        <text class="headline">书本信息</text>
+        <view class="text bookinfo">
+            <view class="bottom-info">
+                <text class="summary titles">出版社</text>
+                <text class="summary infos">{{info.publisher}}</text>
+            </view>
+            <view class="bottom-info">
+                <text class="summary titles">出版年</text>
+                <text class="summary infos">{{info.pubdate}}</text>
+            </view>
+            <view class="bottom-info">
+                <text class="summary titles">页数</text>
+                <text class="summary infos">{{info.pages}}</text>
+            </view>
+            <view class="bottom-info">
+                <text class="summary titles">定价</text>
+                <text class="summary infos">{{info.price}}</text>
+            </view>
+            <view class="bottom-info">
+                <text class="summary titles">装帧</text>
+                <text class="summary infos">{{info.binding}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="post-container" wx:if="{{!posting}}">
+    <view class="post-fake" bind:tap="onPost">
+        <text>输入短评</text>
+    </view>
+    <view class="like-container">
+        <like class="like" like="{{like}}" num="{{count}}" />
+    </view>
+</view>
+
+<!-- 短评带遮罩 -->
+<v-mask  wx:if="{{posting}}"/>
+<view class="posting-container" wx:if="{{posting}}">
+    <view class="post-header">
+        <text wx:if="{{!short}}">仅可点击标签+1</text>
+        <text wx:else>暂无短评</text>
+        <text class="cancel" bind:tap="onCancel">取消</text>
+    </view>
+    <view class="comment-container">
+        <block wx:for="{{util.list(short,3)}}">
+            <tag tag-class="{{util.indexs(index)}}" text="{{item.content}}" class="tag" bind:gettext="ongettext">
+                <text class="num" slot="after">{{'+'+item.nums}}</text>
+            </tag>
+        </block>
+    </view>
+    <input confirm-type="发送" class="post" placeholder='短评最多12个字' bindconfirm="ongettext"></input>
+</view>
+

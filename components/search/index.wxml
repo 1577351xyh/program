@@ -1,0 +1,58 @@
+<!--components/search/index.wxml-->
+
+<view class="container">
+    <!-- 头部 -->
+    <view class="header">
+        <view class="search-container">
+            <image class="icon" src="images/search.png" />
+            <input value="{{q}}" placeholder-class='in-bar' placeholder='书籍名' class='bar' auto-focus="true" bindconfirm="onSearch" />
+            <image bind:tap="ondeletes" class="cancel-img" src="images/cancel.png" />
+        </view>
+        <view class='cancel' bind:tap="ondelete">取消</view>
+    </view>
+
+    <view wx:if="{{!searchoff}}">
+        <!-- 搜索,历史和热门 -->
+        <view class="history">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>历史搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{history}}" wx:key="*this">
+                    <v-tag text="{{item}}" bind:gettext="onSearch"/>
+                </block>
+            </view>
+        </view>
+
+        <view class="history hot-search">
+            <view class="title">
+                <view class="chunk"></view>
+                <text>热门搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{hotarr}}" wx:key="*this">
+                    <v-tag text="{{item}}" bind:gettext="onSearch" />
+                </block>
+            </view>
+        </view>
+
+    </view>
+
+
+
+    <!-- book组件 -->
+    <view class="books-container" wx:if="{{searchoff}}">
+        <block wx:for="{{searchBook}}" wx:key="{{item.id}}">
+            <v-book show-like="{{false}}" book="{{item}}" class="book" />
+        </block>
+
+         <!-- looding -->
+        <!-- <v-loading class="loading-center" wx:if="{{loadingCenter}}"/> -->
+    </view>
+    <v-loading class="loading" wx:if="{{loading}}"/>
+    <v-loading class="loading-center" wx:if="{{loadingCenter}}"/>
+    
+    <text wx:if="{{empty}}" class="empty-tip">没有搜索到书籍</text>
+   
+</view>

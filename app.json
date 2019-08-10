@@ -1,0 +1,55 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/book/book",
+        "pages/my/my",
+        "components/like/index",
+        "components/classic/moves/index",
+        "components/epsoide/index",
+        "components/centent/index",
+        "components/classic/music/index",
+        "components/classic/essay/index",
+        "components/book/index",
+        "pages/bookinfo/bookinfo",
+        "components/tag/index",
+        "components/mask/index",
+        "components/search/index",
+        "components/londing/idnex",
+        "components/image-buttom/index",
+        "components/preview/index",
+        "components/navi/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "诺克斯",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "borderStyle": "black",
+        "selectedColor": "#000000",
+        "backgroundColor": "#ffffff",
+        "color": "#c7c7c7",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "selectedIconPath": "/images/tab/classic@highlight.png",
+                "iconPath": "/images/tab/classic.png",
+                "text": "流行"
+            },
+            {
+                "pagePath": "pages/book/book",
+                "selectedIconPath": "/images/tab/book@highlight.png",
+                "iconPath": "/images/tab/book.png",
+                "text": "书单"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "selectedIconPath": "/images/tab/my@highlight.png",
+                "iconPath": "/images/tab/my.png",
+                "text": "喜欢"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap91.json"
+}

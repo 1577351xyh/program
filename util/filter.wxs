@@ -1,0 +1,35 @@
+//这个是类似于vuex的计算属性,可以算是一个全局处理函数
+ var format = function(text){
+     if(text==undefined){
+         return;
+     }
+     var reg = getRegExp('\\\\n','g')
+     return text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;')
+}
+
+//返回当前数组的前三项
+var list = function (arr, length){
+    if(arr == undefined || length == undefined){
+        return
+    }
+    return arr.slice(0,length);
+}
+
+//返回当前index对应的字符串
+var indexs = function (index) {
+    if(!index){
+        return;
+    }
+    if (index == 0) {
+        return 'ex-tag1'
+    } else if (index == 1) {
+        return 'ex-tag2'
+    } else {
+        return ''
+    }
+}
+module.exports = {
+    format:format,
+    list:list,
+    indexs: indexs
+}

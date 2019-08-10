@@ -1,0 +1,20 @@
+/* components/like/index.wxss */
+
+.content {
+    width: 100rpx;
+    display: inline-flex;
+    
+}
+
+.content .imgs {
+    line-height: 26rpx;
+    width: 32rpx;
+    height: 28rpx;
+}
+
+.content .num {
+    color: #ccc;
+    font-size: 24rpx;
+    position: relative;
+    bottom: 15rpx;
+}

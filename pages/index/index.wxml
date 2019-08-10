@@ -1,0 +1,17 @@
+<!--pages/index/index.wxml-->
+<view class="index">
+    <view class="heard">
+        <epsoide index="{{classic.index}}" />
+        <view class="like-container">
+            <like-cmp bind:like="onlike" like="{{likeType}}" num="{{likeNum}}" />
+            <img-btn-cmp class="share-btn" open-type="share">
+                <image class="share" slot="img" src="/images/icon/share.png" />
+            </img-btn-cmp>
+        </view>
+    </view>
+
+    <move wx:if="{{classic.type===100}}" img="{{classic.image}}" centent="{{classic.content}}" />
+    <music wx:if="{{classic.type===200}}" img="{{classic.image}}" centent="{{classic.content}}" src="{{classic.url}}" />
+    <essay wx:if="{{classic.type===300}}" img="{{classic.image}}" centent="{{classic.content}}" />
+    <centent class="centent" bind:left="onleft" bind:right="onright" centent="{{classic.title}}" last="{{rightlast}}" frist="{{leftfrist}}"></centent>
+</view>

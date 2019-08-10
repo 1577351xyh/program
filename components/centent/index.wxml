@@ -1,0 +1,6 @@
+<!--components/centent/index.wxml-->
+<view class="centent">
+    <image class="imgs" src="{{last?imgleft:imgsleft}}"  bind:tap="leftclick"></image>
+    <text class="text">{{centent}}</text>
+    <image class="imgs" src="{{frist?imgright:imgsright}}" bind:tap="rightclick"></image>
+</view>
